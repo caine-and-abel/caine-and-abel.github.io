@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>C&A Intranet Login</title>
+</head>
+
+<body style="margin:0; font-family:Tahoma; background:#d4d0c8;">
+
+<div style="background:#000080; color:white; padding:12px;">
+  C&A SYSTEMS INTRANET ACCESS
+</div>
+
+<div style="width:360px; margin:120px auto; background:#fff; border:2px solid #000080; padding:15px;">
+  <h3>Secure Login</h3>
+
+  <input id="user" type="text" placeholder="User ID" style="width:100%; padding:6px;"><br><br>
+  <input id="pass" type="password" placeholder="Password" style="width:100%; padding:6px;"><br><br>
+
+  <button onclick="login()">Login</button>
+
+  <p id="status"></p>
+</div>
+
+<script>
+function login() {
+  let u = document.getElementById("user").value;
+  let p = document.getElementById("pass").value;
+  let s = document.getElementById("status");
+
+  s.innerText = "Authenticating...";
+
+  setTimeout(() => {
+    if(u === "grant" && p === "CaineAccess1998") {
+      window.location.href = "index.html?session=ca_user_1998";
+    } else {
+      s.innerText = "ERROR: Invalid credentials.";
+    }
+  }, 1000);
+}
+</script>
+
+<!--
+AUTH LOG
+grant account still active
+-->
+
+</body>
+</html>
